@@ -1,0 +1,66 @@
+\documentclass[8pt]{extarticle}
+%\usepackage[utf8]{inputenc}
+%\usepackage{default}
+\usepackage[english]{babel}
+\usepackage{datatool}
+\usepackage{xstring}
+\usepackage{ifthen}
+%\usepackage{extsizes}
+\pagestyle{empty}
+\usepackage[left=0.25cm, right=0.25cm, top=1cm, bottom=1cm, paperwidth=28cm, paperheight=20cm]{geometry}
+
+\setlength{\textwidth}{27.5cm}
+\setlength{\textheight}{18cm}
+%\setlength{\tabcolsep}{4.5pt}
+
+\renewcommand*\familydefault{\sfdefault}
+
+%blok prevzaty z http://tex.stackexchange.com/questions/15417/nest-strlen-and-ifthenelse-commands
+\newcommand\CompLen[1]{%
+  \StrLen{#1}[\MyStrLen]% we find the length of the string and store it in \MyStrLen
+  \ifthenelse{\equal{\MyStrLen}{1}}% we compare the length of the string with 6
+        {0}{}}
+%konec bloku
+\DTLloaddb{data}{data.csv}
+\begin{document}
+		\centering
+		{\huge Services from Willesden Junction Underground Station towards Elephant \& Castle Underground Station}
+%	\begin{table}[h!]
+
+	\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+%			\sffamily
+		\hline
+		\hline
+		\multicolumn{20}{|l|}{\begin{LARGE}Monday--Friday\end{LARGE}}  \\
+		\hline
+		\hline
+		{\large \bf 5 to}&{\large \bf 6 to}&{\large \bf 7 to}&{\large \bf 8 to}&{\large \bf 9 to}&{\large \bf 10 to}&{\large \bf 11 to}&{\large \bf  Midday}&{\large \bf 1 to}&{\large \bf 2 to}&{\large \bf 3 to}&{\large \bf 4 to}&{\large \bf 5 to}&{\large \bf 6 to}&{\large \bf 7 to}&{\large \bf 8 to}&{\large \bf 9 to}&{\large \bf 10 to}&{\large \bf 11 to}&{\large \bf  Midnight} \\
+		{\large \bf 6am}&{\large \bf 7am}&{\large \bf 8am}&{\large \bf 9am}&{\large \bf 10am}&{\large \bf 11am}&{\large \bf  Midday}&{\large \bf to 1pm}&{\large \bf 2pm}&{\large \bf 3pm}&{\large \bf 4pm}&{\large \bf 5pm}&{\large \bf 6pm}&{\large \bf 7pm}&{\large \bf 8pm}&{\large \bf 9pm}&{\large \bf 10pm}&{\large \bf 11pm}&{\large \bf  Midnight}&{\large \bf  to 1am} \\ \hline
+		%{\bf  05} 25&{\bf  06} 23&{\bf  07} 13&{\bf  08} 14&{\bf  09} 15&{\bf  10} 39&{\bf  11} 36&{\bf  12} 04&{\bf  13} 37&{\bf  14} 11&{\bf  15} 26&{\bf  16} 13&{\bf  17} 34&{\bf  18} 39&{\bf  19} 40&{\bf  20} 22&{\bf  21} 33&{\bf  22} 32&{\bf  23} 09&{\bf  00} 05\\
+		%{\bf  05} 56&{\bf  06} 31&{\bf  07} 45&{\bf  08} 31&{\bf  09} 38&{\bf  10} 41&{\bf  11} 59&{\bf  12} 26&&{\bf  14} 44&{\bf  15} 52&{\bf  16} 33&&{\bf  18} 42&&{\bf  20} 28&{\bf  21} 51&{\bf  22} 41&{\bf  23} 28&{\bf  00} 36\\
+		\DTLforeach{data}{\a=w5,\b=w6,\c=w7,\d=w8,\e=w9,\f=w10,\g=w11,\h=w12,\i=w13,\j=w14,\k=w15,\l=w16,\m=w17,\n=w18,\o=w19,\p=w20,\q=w21,\r=w22,\s=w23,\t=w24}
+		{\ifthenelse{\equal{\a}{}}{}{{\bf 05} \CompLen{\a}\a }&
+		\ifthenelse{\equal{\b}{}}{}{{\bf 06} \CompLen{\b}\b }&
+		\ifthenelse{\equal{\c}{}}{}{{\bf 07} \CompLen{\c}\c }&
+		\ifthenelse{\equal{\d}{}}{}{{\bf 08} \CompLen{\d}\d }&
+		\ifthenelse{\equal{\e}{}}{}{{\bf 09} \CompLen{\e}\e }&
+		\ifthenelse{\equal{\f}{}}{}{{\bf 10} \CompLen{\f}\f }&
+		\ifthenelse{\equal{\g}{}}{}{{\bf 11} \CompLen{\g}\g }&
+		\ifthenelse{\equal{\h}{}}{}{{\bf 12} \CompLen{\h}\h }&
+		\ifthenelse{\equal{\i}{}}{}{{\bf 13} \CompLen{\i}\i }&
+		\ifthenelse{\equal{\j}{}}{}{{\bf 14} \CompLen{\j}\j }&
+		\ifthenelse{\equal{\k}{}}{}{{\bf 15} \CompLen{\k}\k }&
+		\ifthenelse{\equal{\l}{}}{}{{\bf 16} \CompLen{\l}\l }&
+		\ifthenelse{\equal{\m}{}}{}{{\bf 17} \CompLen{\m}\m }&
+		\ifthenelse{\equal{\n}{}}{}{{\bf 18} \CompLen{\n}\n }&
+		\ifthenelse{\equal{\o}{}}{}{{\bf 19} \CompLen{\o}\o }&
+		\ifthenelse{\equal{\p}{}}{}{{\bf 20} \CompLen{\p}\p }&
+		\ifthenelse{\equal{\q}{}}{}{{\bf 21} \CompLen{\q}\q }&
+		\ifthenelse{\equal{\r}{}}{}{{\bf 22} \CompLen{\r}\r }&
+		\ifthenelse{\equal{\s}{}}{}{{\bf 23} \CompLen{\s}\s }&
+		\ifthenelse{\equal{\t}{}}{}{{\bf 00} \CompLen{\t}\t }\\}
+			%\hline
+			%\\
+		\end{tabular}
+%	\end{table}
+\end{document}
