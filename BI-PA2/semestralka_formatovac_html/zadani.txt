@@ -1,0 +1,2 @@
+Formátovač HTML
+Realizujte program, který opticky pěkně zformátuje zdrojový kód zapsaný v HTML. Na vstupu je soubor se zdrojovým kódem HTML stránky, výstupem je ekvivalentní kód, ve kterém jsou "spravena" odsazení. Program dále bude kontrolovat vnořování tagů (zda se nekříží, ...), platnost tagů a platnost atributů u jednotlivých tagů. Pokud budou při kontrole zjištěné chyby, budou zobrazeny uživateli včetně lokalizace (číslo řádku). 

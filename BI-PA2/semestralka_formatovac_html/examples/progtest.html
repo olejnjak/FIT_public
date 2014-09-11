@@ -1,0 +1,80 @@
+
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-transitional.dtd" >
+<html>
+ <head>
+  <title>progtest.fit.cvut.cz - ProgTest</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="/css.css" rel="stylesheet" type="text/css" />
+  <script src="/shared.js" language="JavaScript" type="text/javascript"></script>
+ </head>
+ <body bgcolor="#828273" text="#000000">
+
+  <script language="JavaScript" type="text/javascript">
+  <!--
+  function doValidate ( )
+   {
+     var P1 = MM_findObj ( 'UserName' );
+
+     if ( P1.value == "" )
+      {
+        alert ( 'Chybí uživatelské jméno' );
+        return ( false );
+      }
+     return ( 1 );
+   }
+  function changeLg ( x )
+   {
+     var url = x . options[x . selectedIndex ] . value;
+     document . location = url;
+   }
+  // -->
+  </script>
+
+  <br />
+  <br />
+  <form name="form" method="post" action="?X=Login&amp;Lg=1" onsubmit="return( doValidate () )">
+   <center>
+    <div class="insBox">
+     <div class="outBox">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+       <col width="50%" />
+       <col width="50%" />
+       <tbody>
+        <tr>
+         <td class="lrtbCell" colspan="2"><select class="std fw" name="lang" onchange="changeLg(this)"><option value="?X=Main&Lg=1" selected="selected" >CZE</option><option value="?X=Main&Lg=2" >ENG</option></select></td>
+        </tr>
+        <tr>
+         <td class="al ltbCell"><b>Username</b></td>
+         <td class="rtbCell"><input class="std w200" name="UserName" value="" /></td>
+        </tr>
+        <tr>
+         <td class="al ltbCell"><b>Heslo</b></td>
+         <td class="rtbCell"><input type="password" class="std w200" name="Password" value="" /></td>
+        </tr>
+        <tr>
+         <td class="al ltbCell"><b>Škola</b></td>
+         <td class="rtbCell"><select class="std w200" name="University"><option value="2">ČVUT - FIT</option><option value="3">Akademie Silicon Hill</option><option value="1">ČVUT - FEL</option></select></td>
+        </tr>
+
+        <tr>
+         <td class="Cell" colspan="2" align="center">
+          <table border="0">
+           <tr>
+            <td><div class="outButton w120"><input type="submit" class="updButton" name="Login" value="Login" /></div></td>
+            <td><div class="outButton w120"><input type="submit" class="updButton" name="LoginMail" value="Poslat heslo" /></div></td>
+           </tr>
+          </table>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </center>
+  </form>
+
+
+ </body>
+</html>
+<!-- Template run time: 0.0036859512329102 sec -->
